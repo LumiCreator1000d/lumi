@@ -1,0 +1,27 @@
+LUMI - mode d'emploi
+
+CREER L'APK
+1. Installe Android Studio (gratuit) : developer.android.com/studio
+2. File > Open > choisis ce dossier "lumi-android". Laisse la synchronisation Gradle finir (accepte les mises a jour proposees).
+3. Pour tester : branche ton telephone (mode developpeur + debogage USB) et clique sur Run.
+4. Pour l'APK : Build > Build Bundle(s) / APK(s) > Build APK(s). Le fichier est dans app/build/outputs/apk/debug/.
+   (Pour publier sur le Play Store : Build > Generate Signed Bundle, format AAB.)
+
+ACTIVER LUMI PAR APPUI LONG
+Parametres > Applications > Applications par defaut > Assistant numerique (ou "Application d'assistance") > choisis Lumi.
+Ensuite : appui long sur le bouton d'accueil (ou geste equivalent) -> Lumi t'ecoute.
+
+POUR QUE LES REVEILS SONNENT BIEN
+- Autorise les notifications et "afficher par-dessus l'ecran de verrouillage" pour Lumi.
+- Desactive l'optimisation de batterie pour Lumi (surtout Xiaomi, Huawei, Samsung).
+- Le volume de la musique suit le volume "media" du telephone.
+
+PHRASES COMPRISES
+"mets un rappel lundi a 8h pour appeler maman" / "rappelle-moi dans 20 minutes de sortir le gateau"
+"reveille-moi demain a 7h" / "mets un reveil a 6h45"
+"note acheter du lait"
+
+SANS ORDINATEUR (depuis un telephone)
+1. Cree un compte gratuit sur github.com et un nouveau depot (repository).
+2. Envoie-y TOUT le contenu du dossier (y compris le dossier cache .github).
+3. Onglet "Actions" > "Build APK" > attends ~5 min > telecharge "lumi-apk" (contient app-debug.apk).

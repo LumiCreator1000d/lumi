@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Lumi</title>
+<style>
+:root{--bg:#fff6ee;--card:#ffffffcc;--ink:#3b3350;--mut:#8a8199;--acc:#f2a6b8;--acc2:#b9a7e8;--line:#f0e2e8;--g1:#fff3ea;--g2:#fbe9f1;--g3:#ece6fa}
+@media(prefers-color-scheme:dark){:root{--bg:#1e1a2b;--card:#2a2540cc;--ink:#f1eaf7;--mut:#a79fba;--line:#3a3456;--g1:#231e33;--g2:#2a2240;--g3:#1d1a30}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:system-ui,sans-serif;background:linear-gradient(var(--g1),var(--g2) 45%,var(--g3)) fixed;padding:12px 16px 96px;max-width:520px;margin:auto}
+.hero{text-align:center;padding:6px 0 4px}
+.lumi{width:150px;height:150px;animation:float 6s ease-in-out infinite;overflow:visible}
+@keyframes float{50%{transform:translateY(-8px)}}
+.eye{transform-box:fill-box;transform-origin:center;animation:blink 6s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.star{transform-box:fill-box;transform-origin:center;animation:tw 4s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(1.15) rotate(8deg)}}
+.oh,.halo{opacity:0}.listen .oh{opacity:1}.listen .smile{opacity:0}
+.halo{transform-box:fill-box;transform-origin:center}.listen .halo{animation:halo 2.4s ease-out infinite}
+@keyframes halo{0%{opacity:.8;transform:scale(.85)}100%{opacity:0;transform:scale(1.3)}}
+.bubble{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 14px;font-size:15px;max-width:92%;margin-top:4px}
+#mic{width:64px;height:64px;border-radius:50%;font-size:28px;margin:12px auto 2px;display:block;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 6px 18px #b9a7e855}
+.sub{color:var(--mut);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;margin:10px 0;backdrop-filter:blur(6px)}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+input,select,textarea,button{font:inherit;color:inherit}
+input,select,textarea{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:11px;width:100%}
+textarea{min-height:90px;resize:vertical}
+button{border:0;border-radius:16px;padding:11px 16px;background:var(--acc);color:#3b2030;font-weight:700}
+button.g{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.big{font-size:30px;font-weight:300}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:4px;background:var(--card);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px))}
+nav button{background:none;color:var(--mut);flex:1;max-width:120px;padding:8px 2px;font-size:13px}
+nav button.on{background:var(--bg);color:var(--ink)}
+.tab{display:none}.tab.on{display:block}
+.sw{width:48px;height:28px;border-radius:14px;background:var(--line);position:relative;flex:none;padding:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:left .4s}
+.sw.on{background:var(--acc2)}.sw.on::after{left:23px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal button{background:var(--bg);color:var(--ink);padding:9px 0;font-weight:500;border:1px solid transparent;position:relative}
+.cal button.t{border-color:var(--acc2)}.cal button.s{background:var(--acc);color:#3b2030}
+.cal i{position:absolute;bottom:3px;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--acc2)}
+.dn{text-decoration:line-through;opacity:.5}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<div class="hero">
+<svg id="lumi" class="lumi" viewBox="0 0 160 160"><defs>
+<radialGradient id="g" cx=".38" cy=".3"><stop offset="0" stop-color="#fff0f4"/><stop offset=".6" stop-color="#f7b7c8"/><stop offset="1" stop-color="#ee94ae"/></radialGradient>
+<radialGradient id="h"><stop offset="0" stop-color="#ffeab0"/><stop offset="1" stop-color="#ffd16b"/></radialGradient></defs>
+<circle class="halo" cx="80" cy="92" r="64" fill="none" stroke="#b9a7e8" stroke-width="3"/>
+<circle cx="38" cy="50" r="15" fill="#f4a3ba"/><circle cx="122" cy="50" r="15" fill="#f4a3ba"/><circle cx="38" cy="50" r="8" fill="#ffd3df"/><circle cx="122" cy="50" r="8" fill="#ffd3df"/>
+<path d="M80 38V22" stroke="#b9a7e8" stroke-width="4" stroke-linecap="round"/>
+<path class="star" d="M80 3l4.5 9 10 1.4-7.2 7 1.7 10-9-4.7-9 4.7 1.7-10-7.2-7 10-1.4z" fill="url(#h)"/>
+<ellipse cx="80" cy="92" rx="58" ry="52" fill="url(#g)"/>
+<ellipse cx="56" cy="64" rx="12" ry="6" fill="#fff" opacity=".5" transform="rotate(-25 56 64)"/>
+<ellipse class="eye" cx="58" cy="90" rx="7" ry="9" fill="#3b3350"/><ellipse class="eye" cx="102" cy="90" rx="7" ry="9" fill="#3b3350"/>
+<circle cx="60" cy="86" r="2.6" fill="#fff"/><circle cx="104" cy="86" r="2.6" fill="#fff"/>
+<circle cx="42" cy="106" r="9" fill="#f78fa7" opacity=".45"/><circle cx="118" cy="106" r="9" fill="#f78fa7" opacity=".45"/>
+<path class="smile" d="M70 108q10 9 20 0" stroke="#3b3350" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<ellipse class="oh" cx="80" cy="111" rx="5" ry="6" fill="#3b3350"/></svg>
+<div><span class="bubble" id="bub"></span></div>
+<button id="mic" aria-label="Parler à Lumi">🎙</button><div class="sub">Dis par exemple : « mets un rappel lundi à 8h »</div>
+</div>
+
+<section class="tab on"><div class="card"><div class="sub">Nouveau réveil</div>
+<div class="row" style="margin-top:8px"><input type="time" id="at" value="07:30" style="font-size:24px"><input id="al" placeholder="Nom du réveil"></div>
+<div class="row" style="margin-top:8px"><select id="am"></select><button class="g" id="pv">Écouter</button></div>
+<button style="width:100%;margin-top:10px" id="aa">Ajouter le réveil</button></div><div id="alist"></div></section>
+
+<section class="tab"><div class="card"><input id="rt" placeholder="Me rappeler de…"><input type="datetime-local" id="rd" style="margin-top:8px"><button style="width:100%;margin-top:10px" id="ra">Ajouter le rappel</button></div><div id="rlist"></div></section>
+
+<section class="tab"><div class="card"><div class="row"><button class="g" id="pm">‹</button><b id="mt"></b><button class="g" id="nm">›</button></div><div class="cal" id="cal" style="margin-top:10px"></div></div><div id="dlist"></div></section>
+
+<section class="tab"><div class="card"><input id="nt" placeholder="Titre"><textarea id="nb" placeholder="Ta note…" style="margin-top:8px"></textarea><button style="width:100%;margin-top:10px" id="na">Enregistrer la note</button></div><div id="nlist"></div></section>
+<nav id="nav"></nav>
+
+<script src="melodies.js"></script><script src="voice.js"></script>
+<script>
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,"0");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const NAT=typeof Android!=="undefined";
+let S={a:[],r:[],n:[]};
+try{S=Object.assign(S,JSON.parse(localStorage.getItem("lumi")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("lumi",JSON.stringify(S))}catch(e){}if(NAT)try{Android.sync(JSON.stringify(S))}catch(e){}};
+const dk=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const iso=d=>dk(d)+"T"+pad(d.getHours())+":"+pad(d.getMinutes());
+const say=t=>$("#bub").textContent=t;
+$("#am").innerHTML=Object.keys(M).map(k=>`<option>${k}</option>`).join("");
+$("#pv").onclick=()=>{if(tm){stop()}else play($("#am").value);$("#pv").textContent=tm?"Stop":"Écouter"};
+// Onglets
+const T=["⏰ Réveils","🔔 Rappels","📅 Agenda","📝 Notes"];
+$("#nav").innerHTML=T.map((t,i)=>`<button data-i="${i}">${t}</button>`).join("");
+const go=i=>{document.querySelectorAll(".tab").forEach((x,j)=>x.classList.toggle("on",j==i));[...$("#nav").children].forEach((b,j)=>b.classList.toggle("on",j==i))};
+$("#nav").onclick=e=>{if(e.target.dataset.i!=null)go(+e.target.dataset.i)};go(0);
+// Réveils
+function rA(){$("#alist").innerHTML=S.a.map((a,i)=>`<div class="card row"><div><div class="big">${a.t}</div><div class="sub">${esc(a.l||"Réveil")} · ${a.date?a.date.split("-").reverse().join("/"):"tous les jours"} · ${esc(a.m)}</div></div><div class="row"><button class="sw ${a.on?"on":""}" data-s="${i}"></button><button class="g" data-d="${i}">✕</button></div></div>`).join("")||'<p class="sub" style="text-align:center">Aucun réveil. Lumi dort encore… 💤</p>'}
+$("#aa").onclick=()=>{S.a.push({t:$("#at").value,l:$("#al").value,m:$("#am").value,on:true});save();rA();say("Réveil ajouté, dors bien 🌙")};
+$("#alist").onclick=e=>{const s=e.target.dataset.s,d=e.target.dataset.d;if(s!=null)S.a[s].on=!S.a[s].on;if(d!=null)S.a.splice(d,1);save();rA()};
+// Rappels
+function rR(){S.r.sort((a,b)=>a.d.localeCompare(b.d));$("#rlist").innerHTML=S.r.map((r,i)=>`<div class="card row"><label class="row ${r.x?"dn":""}" style="justify-content:flex-start"><input type="checkbox" style="width:auto" data-c="${i}" ${r.x?"checked":""}><span>${esc(r.t)}<br><span class="sub">${r.d.replace("T"," à ")}</span></span></label><button class="g" data-d="${i}">✕</button></div>`).join("")||'<p class="sub" style="text-align:center">Rien à te rappeler pour l\'instant ✨</p>';cal()}
+$("#ra").onclick=()=>{if(!$("#rt").value||!$("#rd").value)return;S.r.push({t:$("#rt").value,d:$("#rd").value});$("#rt").value="";save();rR();say("Rappel noté ✨")};
+$("#rlist").onclick=e=>{const c=e.target.dataset.c,d=e.target.dataset.d;if(c!=null)S.r[c].x=e.target.checked;if(d!=null)S.r.splice(d,1);save();rR()};
+// Agenda
+let cur=new Date(),sel=dk(new Date());cur.setDate(1);
+function cal(){const y=cur.getFullYear(),m=cur.getMonth();$("#mt").textContent=cur.toLocaleDateString("fr-FR",{month:"long",year:"numeric"});let h="";const off=(new Date(y,m,1).getDay()+6)%7;for(let i=0;i<off;i++)h+="<span></span>";
+ for(let d=1;d<=new Date(y,m+1,0).getDate();d++){const k=y+"-"+pad(m+1)+"-"+pad(d),has=S.r.some(r=>r.d.startsWith(k))||S.a.some(a=>a.date==k);h+=`<button data-k="${k}" class="${k==dk(new Date())?"t ":""}${k==sel?"s":""}">${d}${has?"<i></i>":""}</button>`}
+ $("#cal").innerHTML=h;const L=S.r.filter(r=>r.d.startsWith(sel));
+ $("#dlist").innerHTML=`<div class="card"><b>${sel.split("-").reverse().join("/")}</b>${L.map(r=>`<div class="sub" style="margin-top:6px">${r.d.slice(11)} · ${esc(r.t)}</div>`).join("")||'<div class="sub" style="margin-top:6px">Journée libre 🌸</div>'}</div>`}
+$("#cal").onclick=e=>{if(e.target.dataset.k){sel=e.target.dataset.k;$("#rd").value=sel+"T09:00";cal()}};
+$("#pm").onclick=()=>{cur.setMonth(cur.getMonth()-1);cal()};$("#nm").onclick=()=>{cur.setMonth(cur.getMonth()+1);cal()};
+// Notes
+function rN(){$("#nlist").innerHTML=S.n.map((n,i)=>`<div class="card"><div class="row"><b>${esc(n.t||"Sans titre")}</b><button class="g" data-d="${i}">✕</button></div><div class="sub" style="white-space:pre-wrap;margin-top:6px">${esc(n.b)}</div></div>`).join("")}
+$("#na").onclick=()=>{if(!$("#nb").value&&!$("#nt").value)return;S.n.unshift({t:$("#nt").value,b:$("#nb").value});$("#nt").value=$("#nb").value="";save();rN();say("Note enregistrée 📝")};
+$("#nlist").onclick=e=>{if(e.target.dataset.d!=null){S.n.splice(e.target.dataset.d,1);save();rN()}};
+// Voix
+const fr=d=>d.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"})+" à "+pad(d.getHours())+"h"+pad(d.getMinutes());
+function handle(txt){const r=parseVoice(txt);
+ if(r.type=="a"){S.a.push({t:pad(r.d.getHours())+":"+pad(r.d.getMinutes()),l:r.c,m:"Aube dorée",on:true,date:r.said?dk(r.d):""});save();rA();go(0);say("Réveil réglé : "+(r.said?fr(r.d):"tous les jours à "+pad(r.d.getHours())+"h"+pad(r.d.getMinutes()))+" ☀️")}
+ else if(r.type=="n"){S.n.unshift({t:"Note vocale",b:r.c});save();rN();go(3);say("Note enregistrée 📝")}
+ else{S.r.push({t:r.c||"Rappel",d:iso(r.d)});save();rR();go(1);say("C'est noté : "+(r.c||"rappel")+", "+fr(r.d)+" ✨")}}
+window.onVoiceState=s=>{$("#lumi").classList.toggle("listen",s=="listen");if(s=="listen")say("Je t'écoute… 🎧")};
+window.onVoice=t=>{$("#lumi").classList.remove("listen");say("« "+t+" »");setTimeout(()=>handle(t),900)};
+window.onVoiceError=c=>{$("#lumi").classList.remove("listen");say(c==7||c==6?"Je n'ai rien entendu, réessaie 🌙":"Micro indisponible pour le moment")};
+$("#mic").onclick=()=>{if(NAT)Android.listen();else{const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R)return say("Micro non disponible ici");const r=new R();r.lang="fr-FR";r.onstart=()=>onVoiceState("listen");r.onresult=e=>onVoice(e.results[0][0].transcript);r.onerror=()=>onVoiceError(0);r.start()}};
+// Accueil
+const h=new Date().getHours();say((h<5?"Bonne nuit":h<12?"Bonjour":h<18?"Coucou":"Bonsoir")+" ! Je suis Lumi 🌙");
+rA();rR();rN();cal();save();
+</script></body></html>

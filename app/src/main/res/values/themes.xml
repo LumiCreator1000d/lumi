@@ -1,0 +1,8 @@
+<resources>
+    <color name="ic_bg">#FBE9F1</color>
+    <style name="Theme.Lumi" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#FFF3EA</item>
+        <item name="android:navigationBarColor">#ECE6FA</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
